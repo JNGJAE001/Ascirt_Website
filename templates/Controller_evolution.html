@@ -47,10 +47,10 @@
                     <div class="col-lg-12">
                         <h1>Controller evolution</h1>
 
-			<p>Behaviour of a robot is primarily determined by its controller which maps the given sensory input pattern to a corresponding motor output. Designing an effective controller has long been a tedious and complex process that required large amount of knowledge regarding the robotic system and its interactions with the environment. Evolutionary Robotics is a novel discipline that reduces the complexity in controller design by incorporating Evolutionary Algorithm to design process.
+			<p>Behaviour of a robot is primarily determined by its controller which maps the given sensory input pattern to a corresponding motor output. Designing an effective controller has long been a tedious and complex task that required large amount of knowledge regarding the robotic system and its interactions with the environment. Evolutionary Robotics is a novel discipline that reduces the complexity in controller design by incorporating Evolutionary Algorithm to design process. Main focus of this approach is in the evolutionary controller design methods of Evolutionary Robotics.
  <br>
                                 <br>
- Evolutionry Algorithm is an Artificial Intelligence technique that uses the theory of natural selection to generate population of candidate solutions iteratively. When applied to controller design it simplifies the design process by iteratively refining imperfect controllers rather than requiring a complete functional controller from the start.
+ Evolutionry Algorithm is an Artificial Intelligence technique that uses the theory of natural selection to generate population of candidate solutions iteratively. When applied to controller design it simplifies the design process by continuously refining imperfect controllers rather than requiring a complete functional controller from the start.
 
  <br>
 			<figure>
@@ -63,7 +63,7 @@ a flow-chart.
                       </figcaption>
                     </figure>
                                 <br>
-Artificial Neural Network (ANN) is often chosen as the controller in Evolutionary Robotics. ANN can be thought of as a computational model that attemps to mimic the way in which biological brains processes information. The basic structure of ANN consists of three layers of interconnected artificial nodes. Nodes and their interconnections are analogous to neurons and synapses of a human brain. Each node can be seen as a processing unit that uses the received input to generate an output. Computation in ANN is done layer by layer where output from each node is fed as input to the connected nodes in the next layer. 
+Artificial Neural Network (ANN) is often chosen as the controller in Evolutionary Robotics. ANN can be thought of as a computational model that attempts to mimic the way in which biological brains processes information. The basic structure of ANN consists of three layers of interconnected artificial nodes. Nodes and their interconnections are analogous to neurons and synapses of a human brain. Each node can be seen as a processing unit that uses its received input to generate an output. Computation in ANN is done layer by layer where output from each node is fed as input to the connected nodes in the next layer. 
  <br>
 			<figure>
                       <center><img src="../resources/images/ANN-generic.png"  width="300px" height"200px" ></center>
@@ -89,10 +89,12 @@ In Evolutionary Robotics, such neural network controllers are refined using evol
                       NeuroEvolution of Augmenting Topologies (NEAT) is a neuro-evolution technique that follows a constructive approach. The ANN in this approach starts out in its simplest form (without any hidden layer), and over the course of evolution iterations (generations) ANN is gradually complexified by adding neurons and connections to its structure. This approach reduces the search space greatly and allows the most simplest solution to be found.
                       <br>
                       <br>
-                      Symbiotic, adaptive neuro-evolution (SANE) is a neuro-evolution technique that perform hierachical evolution of neurons and blueprints. Neurons defines the connections of the hidden layer while the blueprints defines which subset of these neurons are selected to form the hidden layer of an ANN. Evolving partial solutions has the benefit of maintaining genetic diversity which helps finding a globally optimal solution by preventing premature convergence.</p>
+                      Symbiotic, adaptive neuro-evolution (SANE) is a neuro-evolution technique that perform hierachical evolution of neurons and blueprints. Neuron defines the connections of the hidden layer while the blueprint defines which subset of the neurons are selected to form the hidden layer of an ANN. This method has the benefit of maintaining genetic diversity which helps finding a globally optimal solution by preventing premature convergence.
+<br><br>
+By comparing these two methods we aim to find out which method is the better for controller design, and also to investigate what kinds of effects these distinct features of each methods have on the controller design process.
 
                   <h2>Experiments</h2>
-  <p>                     The two methods were tested on generating a controller for a team of robots (20 robots per team). Each team was equipped with ANN controllers that either evolved with NEAT or SANE. They were also equipped with a fixed set of sensors (morphology). Each team was tasked with a collective gathering task thats required them to cooperate in searching and retrieving objects of interest dispersed in the envrionement. A simulated environment was designed to test these methods. The environment consisted of a squire grid world which contained a team of robots and various collectable objects.
+  <p>                     The two methods were tested on generating a controller for a team of robots (20 robots per team). Each team was equipped with ANN controllers that was either evolved with NEAT or SANE. They were also equipped with a fixed set of sensors (morphology) to provide reading of surrouding environment. Each team was tasked with a collective gathering task thats required them to cooperate in searching and retrieving objects of interest dispersed in the envrionement. A simulated environment was designed to test these methods. The environment consisted of a squire grid world which contained a team of robots and various collectable objects.
                       <br>
                       <br>
                       Collectable objects comes in three different sizes which requires varying degree of cooperation to be pushed.
