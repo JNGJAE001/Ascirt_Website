@@ -17,11 +17,11 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        ASCIRT
                     </a>
                 </li>
                 <li>
-                    <a href="../index.html">Dashboard</a>
+                    <a href="../index.html">Overview</a>
                 </li>
                 <li>
                     <a href="Controller_evolution.html">Controller evolution</a>
@@ -47,8 +47,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Adaptive Sensory Configurations in Robot Teams</h1>
-                        <h2>A Co-Evolution Apprach</h2>
+                    <h1>A Co-Evolution Apprach</h1>
+                    <br>
+                    <br>
+
 
                         <p>
                             A Robot Agent is made up of a morphology and a controller - a body and a brain. Traditionally, robot agents have been designed by hand : a careful design of the body of a robot and a set of guidance heuristics to guide the robot to complete a task.
@@ -61,7 +63,7 @@
                             <ul>
                                 <li>Bearing : The positioning of the sensor on the robot agent.</li>
                                 <li>Field of View : The value of the angle between the 2 edges.</li>
-                                <li>Orientation : The anglular offset between the perpendicular line drawn from the centre of the circle and the centre of a sensor’s vision</li>
+                                <li>Orientation : The anglular offset between the perpendicular line drawn from the centre of the circle and the centre of a sensors vision</li>
                                 <li>Range : The distance a robot sensor can sense an object.</li>
                             </ul>
                             <br>
@@ -71,9 +73,44 @@
                             <p>
                                 The Controller of the robot agent was implemeneted using an Artificial Neural Network (ANN). The typical structure of an ANN has a set of input nodes, a hidden layer of nodes and an output layer of nodes. Given the configuration of the Khepera robot agent - the inputs into the ANN are the sensory readings and the 2 output nodes are the drivers of the two motors to drive the two wheels of the Khepera Robot.
                                 <br>
-                                NEAT (Neuro Evolution for Augmenting topologies) is a great method to train an Artificial Neural Network. NEAT adapts the weights AND the topology of an Artificial Neural Network. This is an amazing approach because it allows one to change thes stucture of an Artificial Neural Network.
-
+                                <br>
+                                NEAT (Neuro Evolution for Augmenting topologies) is a great method to train an Artificial Neural Network. NEAT adapts the weights AND the topology of an Artificial Neural Network. This is an amazing approach because it allows one to change the stucture of an Artificial Neural Network. Becuase the morphology of the robot agents is evolving, the input nodes will change and hence NEAT is the preferred Evolutionary Computing method
+                                <br>
+                                <br>
+                                Due to the convenience of using NEAT as the Evolutionary Computing approach for adapting the morphology and controller of a robot agent, a new method called NEAT-M (Hewland; 2014) was created to use Neuro Evolution to adapt the controller and morpohlogy of a robot agent. Hence, both the controller configuration and the morphology configuration was represented by an Artificial Neural Network (ANN).
                             </p>
+
+                            <h2>Experiments</h2>
+                            <p>To test the effectiveness of the Co-Evolution approach, a simulator platform was developed to spawn 20 robot agents and a number of resources for the robots to collect and return to a home base. A key desire for the adaptation of robot agents was to adapt them in a manner that would encourage cooperative behaviour. 
+                                <br>
+                                <br>
+                                There were three resources defined in the simulated platform.
+                                <ul>
+                                    <li>Small sized boxes requiring 1 robot to push the box</li>
+                                    <li>Medium sized boxes requiring 2 robot to push the box</li>
+                                    <li>Large sized boxes requiring 3 robot to push the box</li>
+                                </ul>
+                                The different boxes require different levels of cooperation between robot agents.                    
+                            </p>
+                            <h3>The Experiment Setup</h3>
+                            <p>
+                                The following experiment configurations were setup
+                                <ul>
+                                    <li>Minimal Configuration : 10 Small, 5 Medium and 0 Large Boxes</li>
+                                    <li>Minimal Configuration : 5 Small, 5 Medium and 5 Large Boxes</li>
+                                    <li>Minimal Configuration : 0 Small, 5 Medium and 10 Large Boxes</li>                                          
+                                </ul>
+                                The same experiment configurations were setup for the Morphology Evolution approach and the results were compared.
+                                <br>
+                                <br>
+                                 <b>The Crux of the research is to conduct a comparison between the Morpholgy Evolution and Co-Evolution Approach and provide evidence that the Co-Evolution approach is a superior method than the morphology evolution approach for a cooperative foraging task.</b>
+                            </p>
+
+                            <h2>Results</h2>
+
+
+
+
 
 
 
