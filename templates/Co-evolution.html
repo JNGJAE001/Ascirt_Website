@@ -48,10 +48,6 @@
                 <div class="row">
                     <div class="col-lg-12">
                     <h1>A Co-Evolution Apprach</h1>
-                    <br>
-                    <br>
-
-
                         <p>
                             A Robot Agent is made up of a morphology and a controller - a body and a brain. Traditionally, robot agents have been designed by hand : a careful design of the body of a robot and a set of guidance heuristics to guide the robot to complete a task.
                             <br>
@@ -68,7 +64,7 @@
                             </ul>
                             <br>
                             Therefore, in addition to adapting the controller of a robot agent - the morphology (the set of sensors and its paramters) were also evolved to find an optimal robot agent to complete the task.                         
-                            </P>
+                            </p>
                             <h2>Methods and Implementation</h2>
                             <p>
                                 The Controller of the robot agent was implemeneted using an Artificial Neural Network (ANN). The typical structure of an ANN has a set of input nodes, a hidden layer of nodes and an output layer of nodes. Given the configuration of the Khepera robot agent - the inputs into the ANN are the sensory readings and the 2 output nodes are the drivers of the two motors to drive the two wheels of the Khepera Robot.
@@ -107,6 +103,37 @@
                             </p>
 
                             <h2>Results</h2>
+                            <h3>Co-Evolution : A comparison between Small, Medium and Large Configurations</h3>
+                            
+                             <figure>
+                              <img style = "max-width:80%"src="../resources/images/co-evolution-line-graphs.png"/>
+                              <figcaption>Line graph showing the convergence of the 3 experiments </figcaption>
+                            </figure> 
+                            <br>
+                            <br>
+                            <br>
+                            <figure>
+                              <img style = "max-width:80%"src="../resources/images/co-evolution-boxplot.png"/>
+                              <figcaption>A boxplot of the average and best case results of the 3 experiments </figcaption>
+                            </figure> 
+
+                            <h3>Co-Evolution vs Morphology Evolution</h3>
+                            <p>
+                                The Co-Evolution approach was compared to the Morphology Evolution Approach for the minimal, medium and maximum experiments. The results show that the <b>Co-Evolution approach is a superior approach for Small, Medium and Large Experiemnt Configurations</b>
+                            </p>
+
+                            <figure>
+                              <img style = "max-width:80%"src="../resources/images/coev-vs-morph.png"/>
+                              <figcaption>Co-Evolution vs Morphology Evolution </figcaption>
+                            </figure> 
+
+
+                            <h2>Conclusion</h2>
+                            <p>The results have proved our hypothesis that the Co-Evolution of Controller and Morphology is a superior approach. Placing more of the robot configuration under evolutionary control yields better results than a hand-design.
+                            </p>
+
+
+                            
 
 
 
