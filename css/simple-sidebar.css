@@ -18,6 +18,14 @@
     padding-left: 250px;
 }
 
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
