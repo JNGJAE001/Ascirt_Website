@@ -74,21 +74,56 @@
                     <br>
                     <figure class="center-col">
                       <img src="../resources/images/7_simu.jpg" alt="simulation" width="500px" height"500px">
-                      <figcaption style="margin-left: auto; margin-right: auto;">The simulation environment: the yellow blocks
-                        are the resource objects (to be collected by the agents) and
-                        the black circles are the agents, with the different sensors
-                        forming the conical shapes - indicating their range and field
-                        of view.
+                      <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                        <p>
+                          The simulation environment: the yellow blocks
+                          are the resource objects (to be collected by the agents) and
+                          the black circles are the agents, with the different sensors
+                          forming the conical shapes - indicating their range and field
+                          of view.
+                        </p>
                       </figcaption>
                     </figure>
                     <br>
-                    The Co-Evolution takes the evolutionary approach a step further. It uses evolutionary computation to adapt the morphology AND the controller of a robot agent. The Morphology is made up of a set of sensors and each sensor has the following parameters:
-                    <ul>
-                      <li>Bearing : The positioning of the sensor on the robot agent.</li>
-                      <li>Field of View : The value of the angle between the 2 edges.</li>
-                      <li>Orientation : The anglular offset between the perpendicular line drawn from the centre of the circle and the centre of a sensors vision</li>
-                      <li>Range : The distance a robot sensor can sense an object.</li>
-                    </ul>
+                    The morhoplogy of our robots that will be evolved is the sensor configuration. This
+                    describes where and how many sensors will be placed on he robots. There are five parameters
+                    that will be evolved.
+                    <dl>
+                      <dt>Bearing</dt>
+                      <dd>
+                        The position of the sensor on the robot's exterior (along the circumference)orientated
+                        with the robot's forward directional axis.
+                      </dd>
+                      <dt>Orientation</dt>
+                      <dd>
+                        The offset of the sensor's forward direction, relative to the outward normal
+                        from the agent surface (at the sensor's position).
+                      </dd>
+                      <dt>Range</dt>
+                      <dd>
+                        The maximum distance of the sensor's vision.
+                      </dd>
+                      <dt>Field of view</dt>
+                      <dd>
+                        The angle of the sensor's conical arch.
+                      </dd>
+                      <dt>On/Off Sensor</dt>
+                      <dd>
+                        Determines whether or not a particular sensor is activated.
+                      </dd>
+                    </dl>
+                    <figure class="center-col">
+                      <img src="../resources/images/8_morph.jpg" alt="simulation" width="500px" height"500px">
+                      <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                        <p>
+                          The simulation environment: the yellow blocks
+                          are the resource objects (to be collected by the agents) and
+                          the black circles are the agents, with the different sensors
+                          forming the conical shapes - indicating their range and field
+                          of view.
+                        </p>
+                      </figcaption>
+                    </figure>
                     <br>Therefore, in addition to adapting the controller of a robot agent - the morphology (the set of sensors and its paramters) were also evolved to find an optimal robot agent to complete the task.
                   </p>
                   <h2>Methods and Implementation</h2>
