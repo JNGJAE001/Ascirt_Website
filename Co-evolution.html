@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - ASCiRT Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        ASCiRT
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="Controller_evolution.html">Controller evolution</a>
+                </li>
+                <li>
+                    <a href="Morphology_evolution.html">Morphology evolution</a>
+                </li>
+                <li>
+                    <a href="Co-evolution.html">Co-evolution</a>
+                </li>
+		<li>
+                    <a href="Downloads.html">Downloads</a>
+                </li>
+		<li>
+                    <a href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Adaptive Sensory Configurations in Robot Teams</h1>
+                        <h2>A Co-Evolution Apprach</h2>
+
+                        <p>
+                            A Robot Agent is made up of a morphology and a controller - a body and a brain. Traditionally, robot agents have been designed by hand : a careful design of the body of a robot and a set of guidance heuristics to guide the robot to complete a task.
+                            <br>
+                            <br>
+                            Evolutionary Computing and Machine Learning is an Artificial Intelligence technique in which computers and machinery learn to complete a task through experience. Experience is generated with large amount of data and the machines learn with this data. A simple example is a Reinforcement Learning approach - when a robot agent makes a mistake - it is punished and when it does an act which gives some achievement - the robot agent is rewarded. Robot agents commit acts which maximise achievement and minimise punishment and so the Robot agent learns (by itself) to complete a task.
+                            <br>
+                            <br>
+                            The Co-Evolution takes the evolutionary approach a step further. It uses evolutionary computation to adapt the morphology AND the controller of a robot agent. The Morphology is made up of a set of sensors and each sensor has the following parameters:
+                            <ul>
+                                <li>Bearing : The positioning of the sensor on the robot agent.</li>
+                                <li>Field of View : The value of the angle between the 2 edges.</li>
+                                <li>Orientation : The anglular offset between the perpendicular line drawn from the centre of the circle and the centre of a sensor’s vision</li>
+                                <li>Range : The distance a robot sensor can sense an object.</li>
+                            </ul>
+                            <br>
+                            <br>
+                            
+                            </P
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
