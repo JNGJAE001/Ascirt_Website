@@ -22,13 +22,13 @@
 		        <a href="../index.html">Overview</a>
 		    </li>
                 <li>
-                    <a href="Controller_evolution.html">Controller evolution</a>
+                    <a href="Controller_evolution.html">Controller Evolution</a>
                 </li>
                 <li>
-                    <a href="Morphology_evolution.html">Morphology evolution</a>
+                    <a href="Morphology_evolution.html">Morphology Evolution</a>
                 </li>
                 <li>
-                    <a href="Co-evolution.html">Co-evolution</a>
+                    <a href="Co-evolution.html">Co-Evolution</a>
                 </li>
 		<li>
                     <a href="Downloads.html">Downloads</a>
@@ -47,7 +47,179 @@
                     <div class="col-lg-12">
                         <h1>Controller evolution</h1>
 
-			<p>This approach evolved the neural controller of the robot</p>
+			<p>Behaviour of a robot is primarily determined by its controller which maps the given sensory input pattern to a corresponding motor output. Designing an effective controller has long been a tedious and complex task that required large amount of knowledge regarding the robotic system and its interactions with the environment. Evolutionary Robotics is a novel discipline that reduces the complexity in controller design by incorporating Evolutionary Algorithm to design process. Main focus of this approach is in the evolutionary controller design methods of Evolutionary Robotics.
+ <br>
+                                <br>
+ Evolutionry Algorithm is an Artificial Intelligence technique that uses the theory of natural selection to generate population of candidate solutions iteratively. When applied to controller design it simplifies the design process by continuously refining imperfect controllers rather than requiring a complete functional controller from the start.
+
+ <br>
+			<figure>
+                      <center><img src="../resources/images/EA-flowchart.png"  width="400px" height"400px" ></center>
+                      <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                        <p>
+                          The general scheme of an Evolutionary Algorithm as
+a flow-chart.
+                        </p>
+                      </figcaption>
+                    </figure>
+                                <br>
+Artificial Neural Network (ANN) is often chosen as the controller in Evolutionary Robotics. ANN can be thought of as a computational model that attempts to mimic the way in which biological brains processes information. The basic structure of ANN consists of three layers of interconnected artificial nodes. Nodes and their interconnections are analogous to neurons and synapses of a human brain. Each node can be seen as a processing unit that uses its received input to generate an output. Computation in ANN is done layer by layer where output from each node is fed as input to the connected nodes in the next layer. 
+ <br>
+			<figure>
+                      <center><img src="../resources/images/ANN-generic.png"  width="300px" height"200px" ></center>
+                      <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                        <p>
+                          A generic neural network architecture. It consists of
+input and output units which are connected to the external
+environment and hidden units which are only connected to
+other neurons.
+                        </p>
+                      </figcaption>
+                    </figure>
+                                <br>
+When used as a controller for a robot agent, the first layer acts as the input layer which receives readings from the sensory system. These values are sent to the nodes in the intermediary layer, also known as the hidden layer. Hidden layer is responsible for performing computation on the received input value and it once again sends its output to the next and the last layer (output layer). The computed value from the output layer determines the final action to be performed for the given sensory input pattern.  
+
+<br><br>
+
+In Evolutionary Robotics, such neural network controllers are refined using evolutionary algorithm, a technique also known as neuro-evolution. Many different variations of neuro-evolution exists, the aim of this research is to empirically evaluate and compare the performance of the two popular neuro-evolution methods, NEAT and SANE at evolutionary controller design for a collective gathering task.
+</p>
+
+		<h2>Methods and Implementation</h2>
+                  <p>
+                      NeuroEvolution of Augmenting Topologies (NEAT) is a neuro-evolution technique that follows a constructive approach. The ANN in this approach starts out in its simplest form (without any hidden layer), and over the course of evolution iterations (generations) ANN is gradually complexified by adding neurons and connections to its structure. This approach reduces the search space greatly and allows the most simplest solution to be found.
+                      <br>
+                      <br>
+                      Symbiotic, adaptive neuro-evolution (SANE) is a neuro-evolution technique that perform hierachical evolution of neurons and blueprints. Neuron defines the connections of the hidden layer while the blueprint defines which subset of the neurons are selected to form the hidden layer of an ANN. This method has the benefit of maintaining genetic diversity which helps finding a globally optimal solution by preventing premature convergence.
+<br><br>
+By comparing these two methods we aim to find out which method is the better for controller design, and also to investigate what kinds of effects these distinct features of each methods have on the controller design process.
+
+                  <h2>Experiments</h2>
+  <p>                     The two methods were tested on generating a controller for a team of robots (20 robots per team). Each team was equipped with ANN controllers that was either evolved with NEAT or SANE. They were also equipped with a fixed set of sensors (morphology) to provide reading of surrouding environment. Each team was tasked with a collective gathering task thats required them to cooperate in searching and retrieving objects of interest dispersed in the envrionement. A simulated environment was designed to test these methods. The environment consisted of a squire grid world which contained a team of robots and various collectable objects.
+                      <br>
+                      <br>
+                      Collectable objects comes in three different sizes which requires varying degree of cooperation to be pushed.
+                      <ul>
+                          <li>Small sized objects requiring 1 robot to push</li>
+                          <li>Medium sized objects requiring 2 robot to push</li>
+                          <li>Large sized objects requiring 3 robot to push</li>
+                      </ul>
+<br>
+                      Objects are further classified as either a resource or trash. Teams were required to collect resource objects while avoiding trash objects. Performance of the teams were evaluated primarily on whether they accurately collected required objects and secondly on how fast they could collect all the required objects.
+		Collecting Resource objects add positively to the team's score (fitness).
+		while collecting trash objects add negatively to the team's score.
+		Thus team should develop behaviour to collect as many resources
+		as possible while trying avoiding as much trash objects.
+<br><br>
+			<figure>
+                      <center><img src="../resources/images/ENV.png"  width="300px" height"200px" ></center>
+                      <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                        <p>
+                          Graphical view of simulated environment. The team is required to deposit collected objects at the highlighted section at bottom. Yellow objects represntes resources, while black objects represents trash.Two agents along with their sensors are also shown.
+                        </p>
+                      </figcaption>
+                    </figure>
+
+                  </p>
+                  <h3>The Experiment Setup</h3>
+                  <p>
+                      Each methods were tested on three different configuration setup. Each setup required different degree of cooperation to be solved optimally.
+			<figure>
+                      <center><img src="../resources/images/composition.png"  width="500px" height"500px" ></center>
+                      <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                        <p>
+                           Table showing the composition of collectable objects
+(resource/trash) for three environment configuration.
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </p>
+                            <h2>Results</h2>
+                            <h3>NEAT vs SANE: Highest performing teams</h3>
+
+<figure>
+                      <center><img style = "max-width:70%"src="../resources/images/neatsane.png"></center>
+                      <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                        <p>
+                    Boxplots of the maximum fitness team evolved in each experiment. 
+                        </p>
+                      </figcaption>
+                    </figure>
+
+<br>
+<p>
+This result depicts the best solution evolved from each method in a box plot graphs to measure the effectiveness of the two methods.
+<br><br>
+For environment 1 which required relatively small degree of
+cooperation to complete (mainly consisting of small objects),
+NEAT produced its best solution at generation 98 which achieved
+94% of maximum performance efficiency. For the same
+environment SANE produced its best solution at generation 244
+that achieved 61% of maximum performance efficiency.
+<br><br>
+For environment 2 which required slightly more cooperation
+between robots (all block sizes evenly distributed), NEAT
+produced its best solution at generation 191 that achieved 76% of
+the maximum performance efficiency. For the same environment
+SANE produced its best solution at generation 179 that achieved
+44% of maximum performance efficiency.
+<br><br>
+For environment 3 which required which required high degree of
+cooperation between robots to solve, NEAT produced its best
+solution at generation 143 that achieved 58% of the maximum
+performance efficiency. For the same environment SANE
+produced its best solution at generation 63 that achieved 13% of
+maximum performance efficiency.
+<br><br>
+This results indicate that NEAT is the more effective approach
+than SANE on controller design for a collective gathering task.
+Best solution produced by NEAT was higher than the one
+produced by SANE on all three environment configurations.</p>
+
+                            <h3>NEAT vs SANE: Convergence comparison</h3>
+<figure>
+                      <center><img style = "max-width:70%"src="../resources/images/neatsane-conv.png"></center>
+                      <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                        <p>
+                    Convergence graph for small configuration. NEAT
+methods are shown in blue and SANE methods are shown as
+brown. Solid lines are the best fitness produced in each
+generation while dotted lines are the average fitness produced
+in each generation. Similar patterns were observed for other
+environments
+                        </p>
+                      </figcaption>
+                    </figure>
+<br>
+<p>
+This result shows the efficiency of the two methods at generating solutions by measuring the rate of improvements of the controllers.
+<br><br>
+it can be seen that NEAT converges
+rapidly, finding a local optimal solution in a short amount time.
+On the other hand SANE has a very slow convergence rate and it
+still does not converge fully at generation 250.
+<br><br>
+Although
+premature convergence prevents a method from discovering
+potential better solutions, not being able to find any reasonable
+local solution within a given timeframe makes the method
+impractical. This result demonstrated that for a complex
+controller tasks, SANE's explorative approach to maintaining
+genetic diversity can hinder the fitness growth rate of the
+population as it does not fully exploit the local solutions.
+</p>
+
+                            <h2>Conclusion</h2>
+                            <p>We have evaluated
+the performance of the two popular neuro evolution methods
+NEAT and SANE on a collective gathering task. From our results
+it was demonstrated that NEAT outperformed SANE by a
+significant margin. Reason for such outstanding performance by
+NEAT can be credited to the complexification scheme which
+reduces search space greatly leading to quick discovery of good
+solutions. SANE's main advantage of keeping genetic diversity
+may be a double edged sword as it seemed slows down the fitness
+growth rate significantly.
+                            </p>
                     </div>
                 </div>
             </div>
