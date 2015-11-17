@@ -46,7 +46,7 @@
           <div class="container-fluid">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-12 col-md-12 col-lg-12">
                 <h1>Evolving The Morphology</h1>
                 <br>
                   <p>
@@ -71,6 +71,9 @@
                       some form of Artificial Intelligence. The concepts
                       of Evolutionary Computation are used to achieve this
                       goal, which builds the foundations of Evolutionary Robotics.
+                      We hypothesise that evolving the robot's morphology simultaneous
+                      with the evolution of it's controller will result in more robust
+                      robot teams.
                     </p>
                     <br>
                     <p>
@@ -149,18 +152,101 @@
                   <h2>Results</h2>
                   <p>
                     This approach gave better solutions for experiments that required the least amount of cooperation.
+                    As the complexity of the task increases, the team of robot's performance decreased. An interesting
+                    result that emerged is that the evolutionary algorithm naturally selected solutions that do not use
+                    the maximum number of sensors made available to the robots
                   </p>
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                      <figure class="center-col">
+                        <img src="../resources/images/10_graph_fit_curve.png" alt="simulation" width="100%" height"500px">
+                        <figcaption style="margin-left: auto; margin-right: auto; width: 90%">
+                          <p>
+                            The average of the best team fitness scores for each
+                            generation of the evolutionary process for each simulation
+                            configuration. The fitness has been normalized such that
+                            1.0 is the maximum possible task performance.
+                          </p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                      <figure class="center-col">
+                        <img src="../resources/images/9_graph_box_plot.png" alt="simulation" width="100%" height"500px">
+                        <figcaption style="margin-left: auto; margin-right: auto; width: 90%">
+                          <p>
+                            Box plots for average (red) and best (blue) team
+                            fitness for the small, medium and large configuration experiments
+                            (from right to left) respectively. The fitness has
+                            been normalized such that 1.0 is the maximum possible task
+                            performance.
+                          </p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <h2>Co-evolution versus Morphology evolution</h2>
+                  The two aproaches (co-evolution and morphology evolution) were compared in order to support or reject our
+                  experimental hypothesis. We found that the coevolution implementation constantly outperformed the morphological
+                  evolution aproach, for all levels of complexity.
                   <figure class="center-col">
-                    <img src="../resources/images/10_graph_fit_curve.png" alt="simulation" width="1000px" height"500px">
+                    <img src="../resources/images/14_morph_v_coevo.png" alt="simulation" width="1000px" height"500px">
                     <figcaption style="margin-left: auto; margin-right: auto; width: 1000px">
                       <p>
-                        The average of the best team fitness scores for each
-                        generation of the evolutionary process for each simulation
-                        configuration. The fitness has been normalized such that
-                        1.0 is the maximum possible task performance.
+                        Box plots showing average of the team fitnesses of
+                        the best genomes of each experiment run. The averages for
+                        the experiments run with the morphology evolution (ME)
+                        implementation (red) are compared to those of the experiments
+                        run with the coevolution (CE) implementation (blue).
+                        The fitness has been normalized such that 1.0 is the maximum
+                        possible task performance.
                       </p>
                     </figcaption>
                   </figure>
+                  <h2>Conclusion<h2>
+                  The morphology evolution approach is best suited for tasks that require very little to no cooperation between the robots
+                  in order to complete the task. Compared to the cooevolution approach, the morphology evoltuion implementation does not
+                  perform better, thus supporting our hypothesis, thaat the cooevolution implementation is best for robot controller and
+                  body design.
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <figure class="center-col">
+                        <img src="../resources/images/bulbul-20151018T2008-221.jpg" alt="simulation" width="500px" height"500px">
+                        <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                          <p>
+                            The best morphology for the small conguration. A total number
+                            of 6 sensors was used: three infrared sensors(red); and three ultrasonic sensors
+                            (green). The team tness for genome is 60 (maximum team tness is 120).
+                          </p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <figure class="center-col">
+                        <img src="../resources/images/hake-20151029T2206-249.jpg" alt="simulation" width="500px" height"500px">
+                        <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                          <p>
+                            The best morphology for the medium conguration. A total number
+                            of 12 sensors was used: seven infrared sensors(red); three ultrasonic sensors
+                            (green); and two long range infrared sensors (blue). The team tness for genome
+                            is 40 (maximum team tness is 120).
+                          </p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <figure class="center-col">
+                        <img src="../resources/images/anchovy-20151024T0321-237.jpg" alt="simulation" width="500px" height"500px">
+                        <figcaption style="margin-left: auto; margin-right: auto; width: 500px">
+                          <p>
+                            The best morphology for the medium conguration. A total number
+                            of 12 sensors was used: four infrared sensors(red); one ultrasonic sensors (green);
+                            and one long range infrared sensors (blue). The team tness for genome is 17.5
+                            (maximum team tness is 120).
+                          </p>
+                        </figcaption>
+                      </figure>
+                    </div>
                 </div>
               </div>
             </div>
